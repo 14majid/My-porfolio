@@ -1,7 +1,6 @@
 const cards = document.querySelectorAll('.grih');
 const prevcard = $('#prev');
 const nextcard = $('#next');
-const openBtn = document.querySelector('#openbtn');
 let index = 0;
 
 const date = document.querySelector('.date');
@@ -9,21 +8,26 @@ date.innerHTML = new Date().getFullYear();
 
 
 
-openBtn.addEventListener("click", ()=> {
-  openBtn.classList.toggle('actbtn')
-})
 ////////////////////////SLIDER FOR PRJECTS/////////////////////////////////////
 
 
 ////////////////////////SLIDER FOR PRJECTS END/////////////////////////////////////
+const navbar = document.querySelector('.navbar');
+const navLinks = document.querySelector('.navbar-nav');
+const navImg = document.querySelector('.navbar img');
+const toggleButton = document.querySelector(".navbar-toggler");
+const closeBtn = document.querySelector('.closeBtn');
 
-const n = document.querySelector(".navbar");
+toggleButton.addEventListener("click", () => {
+  navbar.style.display = "block";
+  console.log('clicked');
+});
 
-const topPos = n.offsetTop;
-if (topPos > 100) {
-  n.style.position = 'none'
-  n.style.color = '#fff'
-}
+closeBtn.addEventListener("click", () => {
+  navbar.style.display = "none";
+  console.log('clicked');
+});
+
 
 
 ////////////////////////SIDEBAR SLIDER/////////////////////////////////////
@@ -42,5 +46,3 @@ if (topPos > 100) {
 //   });
 // });
 ////////////////////////SIDEBAR SLIDER END/////////////////////////////////////
-
-slideIt(index);
