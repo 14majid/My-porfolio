@@ -33,31 +33,39 @@ p, a, li {
 /******************************* NAVBAR *************************************/
  .navbar {
     position: fixed;
+    top:0;
+    left: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: #fff;
+    background-color: #36F0EF;
     width: 300px;
     height: 100vh;
     padding: 20px 40px;
     z-index: 4;
     box-shadow: 5px 0 5px rgba(0, 0, 0, 0.5);
- }
+}
+
+.hide-navbar {
+    top: 100vh;
+}
+
  .navbar img {
     height: 200px;
     width: 200px;
  }
-.navbar a {
-    text-decoration: underline;
-    font-family: var(--font-one);
-    background-color: #fff;
-}
 
 .navbar-brand {
    font-size: 40px;
    font-weight: 900;
    color: var(--text-color);
+}
+
+.navbar a {
+    text-decoration: underline;
+    font-family: var(--font-one);
+    background-color: #36F0EF;
 }
 
 .navbar-brand:hover{
@@ -82,7 +90,7 @@ p, a, li {
 
 .navbar-nav {
     margin-top: 32px;
-    background-color: #fff;
+    background-color: #36F0EF;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -139,11 +147,15 @@ p, a, li {
 #develope {
     padding: 0;
     margin: 0;
-    background-color: #F1F1F1;
+    background-color: #F09B35;
     position: absolute;
     left: 290px;
     right: 0;
 }
+
+/* .change-left-position {
+    left: 290px;
+} */
 
 
 
@@ -356,6 +368,11 @@ p, a, li {
 .container-project:nth-child(3) {
     margin-top: -100px;
     margin-right: 500px;
+}
+
+.container-project:nth-child(4) {
+    margin-top: -80px;
+    margin-left: 500px;
 }
 
 .container-project img {
@@ -601,6 +618,11 @@ footer .social-net .social-net-links p a {
         margin-right: 600px;
     }
 
+    .container-project:nth-child(4) {
+        margin-top: -80px;
+        margin-left: 600px;
+    }
+
 
     footer {
         flex-direction: column;
@@ -645,6 +667,11 @@ footer .social-net .social-net-links p a {
     .container-project:nth-child(3) {
         margin-top: -100px;
         margin-right: 275px;
+    }
+
+    .container-project:nth-child(4) {
+        margin-top: -80px;
+        margin-left: 280px;
     }
 
     .container-contact {
@@ -698,7 +725,8 @@ footer .social-net .social-net-links p a {
 
     .container-project:nth-child(1),
     .container-project:nth-child(2),
-    .container-project:nth-child(3) {
+    .container-project:nth-child(3),
+    .container-project:nth-child(4) {
         margin: 16px auto; /* Centered and consistent for all */
     }
 }

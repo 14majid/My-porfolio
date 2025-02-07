@@ -1,48 +1,47 @@
-const cards = document.querySelectorAll('.grih');
-const prevcard = $('#prev');
-const nextcard = $('#next');
-let index = 0;
+let prevScrollPos = window.pageYOffset;
+let viewportHeight = window.innerHeight;
 
-const date = document.querySelector('.date');
-date.innerHTML = new Date().getFullYear();
+// Update viewport height on resize
+window.addEventListener("resize", () => {
+  viewportHeight = window.innerHeight;
+});
 
+window.onscroll = function() {
+  const currentScrollPos = window.pageYOffset;
+  const navbar = document.querySelector(".navbar");
+  const after100vhLeft = document.getElementById("develope");
 
+  if (!navbar || !after100vhLeft) return; // Prevent errors if elements are missing
 
-////////////////////////SLIDER FOR PRJECTS/////////////////////////////////////
+  // Check if within the first 100vh
+  const isWithinFirst100vh = currentScrollPos < viewportHeight;
 
+  // Adjust #develope position based on scroll position
+  after100vhLeft.style.left = isWithinFirst100vh ? "290px" : "0px";
 
-////////////////////////SLIDER FOR PRJECTS END/////////////////////////////////////
-const navbar = document.querySelector('.navbar');
-const navLinks = document.querySelector('.navbar-nav');
-const navImg = document.querySelector('.navbar img');
+  // Navbar visibility logic
+  if (prevScrollPos > currentScrollPos && isWithinFirst100vh) {
+    // Scrolling up - Show navbar
+    navbar.classList.remove("hide-navbar");
+  } else {
+    // Scrolling down - Hide navbar
+    navbar.classList.add("hide-navbar");
+  }
+
+  prevScrollPos = currentScrollPos;
+};
+
+// Navbar toggle button for mobile
 const toggleButton = document.querySelector(".navbar-toggler");
 const closeBtn = document.querySelector('.closeBtn');
 
-toggleButton.addEventListener("click", () => {
-  navbar.style.display = "block";
-  console.log('clicked');
+toggleButton?.addEventListener("click", () => {
+  document.querySelector(".navbar").style.display = "block";
 });
 
-closeBtn.addEventListener("click", () => {
-  navbar.style.display = "none";
-  console.log('clicked');
+closeBtn?.addEventListener("click", () => {
+  document.querySelector(".navbar").style.display = "none";
 });
 
-
-
-////////////////////////SIDEBAR SLIDER/////////////////////////////////////
-// const sideBar = document.querySelector(".sidebar");
-// function openNav() {
-//   document.querySelector(".sidebar").style.width = "300px";
-// }
-// function closeNav() {
-//   document.querySelector(".sidebar").style.width = "0";
-// }
-
-// const aTags = document.querySelectorAll('.nav-link');
-// aTags.forEach(aTag => {
-//   aTag.addEventListener('click', () => {
-//     document.querySelector(".sidebar").style.width = "0";
-//   });
-// });
-////////////////////////SIDEBAR SLIDER END/////////////////////////////////////
+// Update copyright year dynamically
+document.querySelector('.date').textContent = new Date().getFullYear();
