@@ -1,35 +1,43 @@
 let prevScrollPos = window.pageYOffset;
 let viewportHeight = window.innerHeight;
 
-// Update viewport height on resize
-window.addEventListener("resize", () => {
-  viewportHeight = window.innerHeight;
-});
-
-window.onscroll = function() {
+// Function to handle scroll behavior
+function handleScroll() {
   const currentScrollPos = window.pageYOffset;
   const navbar = document.querySelector(".navbar");
   const after100vhLeft = document.getElementById("develope");
 
-  if (!navbar || !after100vhLeft) return; // Prevent errors if elements are missing
+  if (!navbar || !after100vhLeft) return;
 
-  // Check if within the first 100vh
   const isWithinFirst100vh = currentScrollPos < viewportHeight;
-
-  // Adjust #develope position based on scroll position
   after100vhLeft.style.left = isWithinFirst100vh ? "290px" : "0px";
 
-  // Navbar visibility logic
   if (prevScrollPos > currentScrollPos && isWithinFirst100vh) {
-    // Scrolling up - Show navbar
     navbar.classList.remove("hide-navbar");
   } else {
-    // Scrolling down - Hide navbar
     navbar.classList.add("hide-navbar");
   }
 
   prevScrollPos = currentScrollPos;
-};
+}
+
+// Function to toggle scroll event based on screen width
+function checkScreenSize() {
+  if (window.innerWidth < 1000) {
+    window.removeEventListener("scroll", handleScroll);
+  } else {
+    window.addEventListener("scroll", handleScroll);
+  }
+}
+
+// Initial check and add event listener
+checkScreenSize();
+
+// Listen for window resize
+window.addEventListener("resize", checkScreenSize);
+
+
+
 
 // Navbar toggle button for mobile
 const toggleButton = document.querySelector(".navbar-toggler");

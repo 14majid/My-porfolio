@@ -39,7 +39,7 @@ p, a, li {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: #36F0EF;
+    background-color: #28343A;
     width: 300px;
     height: 100vh;
     padding: 20px 40px;
@@ -59,17 +59,17 @@ p, a, li {
 .navbar-brand {
    font-size: 40px;
    font-weight: 900;
-   color: var(--text-color);
+   color: #F4EDDF;
 }
 
 .navbar a {
     text-decoration: underline;
     font-family: var(--font-one);
-    background-color: #36F0EF;
+    /* background-color: #36F0EF; */
 }
 
 .navbar-brand:hover{
-    color: #000;
+    color: #F4EDDF;
 }
 
 .navbar-brand::before {
@@ -79,7 +79,7 @@ p, a, li {
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: #28343A;
     animation: showRight 1s ease forwards;
     animation-delay: .5s;
 }
@@ -90,7 +90,7 @@ p, a, li {
 
 .navbar-nav {
     margin-top: 32px;
-    background-color: #36F0EF;
+    /* background-color: #36F0EF; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,7 +100,7 @@ p, a, li {
 .navbar-nav li {
     list-style: none;
     margin: 8px 0;
-    background-color: #fff;
+    /* background-color: #fff; */
     padding: 0;
     font-size: 20px;
     text-decoration: none;
@@ -115,7 +115,7 @@ p, a, li {
 }
 .navbar-nav li a {
     text-decoration: none;
-    color: var(--text-color);
+    color: #F4EDDF;
     display: block;
     width: 100%;
 }
@@ -147,7 +147,7 @@ p, a, li {
 #develope {
     padding: 0;
     margin: 0;
-    background-color: #F09B35;
+    background-color: #F4EDDF;
     position: absolute;
     left: 290px;
     right: 0;
@@ -208,7 +208,7 @@ p, a, li {
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: #F4EDDF;
     animation: showRight 1s ease forwards;
     animation-delay: 1.4s;
 }
@@ -227,7 +227,7 @@ p, a, li {
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: #F4EDDF;
     animation: showRight 1s ease forwards;
     animation-delay: 1.8s;
 }
@@ -419,13 +419,13 @@ p, a, li {
     margin: 10px 30px;
 }
 .email{
-    background-color: #545454;
+    background-color: #28343A;
 }
 .location{
     background-color: #009688;
 }
 .number{
-    background-color: #545454;
+    background-color: #28343A;
 }
 
 .number, .email, .location{
@@ -483,59 +483,52 @@ button .fa-solid {
     font-size: 16px;
 }
 /******************************* CONTACT ****************************************/
-footer {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: var(--padding-contain);
-}
-
-footer h3 {
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 40px;
-}
-
-footer .link h5,
-footer .social-net h5 {
-    font-size: 24px;
-    font-weight: 400;
-    margin-bottom: 32px;
-}
-
-footer ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-footer li{
-    text-decoration: none;
-    padding: 8xp 0;
-    color: #000;
-}
-footer li a {
-    text-decoration: none;
-    color: #000;
-}
-footer li a:hover {
-    text-decoration: underline;
-    color: #000;
-}
-
-/* footer .link .link-img p a,
-footer .social-net .social-net-links p a {
-    font-size: 16px;
-    text-decoration: none;
-    color: #000;
-} */
 /******************************* CONTACT end *************************************/
+
+footer {
+    background: #28343A;
+    color: #F4EDDF;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-container {
+    padding: 80px 0;
+}
+
+.footer-container h3 {
+    padding-bottom: 16px;
+}
+
+.footer-links {
+    padding: 50px 0;
+}
+
+.footer-links a {
+    color: #F4EDDF;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-container .social-icons a {
+    margin: 0 8px;
+    color: #F4EDDF;
+    font-size: 20px;
+}
+
+.social-icons a:hover {
+    color: #ff6600; /* Highlight color */
+}
+
+
+
 
 .copy{
     margin-bottom: 0;
     padding: 2rem 0 0;
     text-align: center;
-    color: rgba(0, 0, 0);
+    color: #F4EDDF;
     opacity: .5;
 }
 
@@ -553,7 +546,7 @@ footer .social-net .social-net-links p a {
         display: block;
         height: 70px;
         width: 100%;
-        background-color: #fff;
+        background-color: #28343A;
     }
     .navbar2 div {
         display: flex;
@@ -563,7 +556,7 @@ footer .social-net .social-net-links p a {
     }
     nav button {
         margin: 8px 0;
-        color: #000;
+        color: #F4EDDF;
         background: none;
     }
 
