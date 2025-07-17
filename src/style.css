@@ -10,6 +10,10 @@
     --font-one: "Lora", "sans-serif";
     --other-font: "Hind Madurai", "sans-serif"
 }
+::selection {
+    background: #28343A;
+    color: #F4EDDF;
+}
 html {
     overflow-x: hidden;
 }
@@ -373,6 +377,11 @@ p, a, li {
 .container-project:nth-child(4) {
     margin-top: -80px;
     margin-left: 500px;
+}
+
+.container-project:nth-child(5) {
+    margin-top: -100px;
+    margin-right: 500px;
 }
 
 .container-project img {
